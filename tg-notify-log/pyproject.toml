@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tg-notify-log"
+version = "0.1.0"
+description = "Очень гибкий Telegram-логгер для Python: HTML, инлайн-кнопки, трейсбеки и защита от спама"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPLv3.0" }
+authors = [{ name = "uranfiz" }]
+keywords = ["telegram", "logging", "notifications", "alerts", "devops"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: System :: Logging",
+]
+dependencies = [
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+async = ["httpx>=0.27.0"]
+media = ["pillow>=10.0.0"]
+dev = [
+    "pytest>=8.0.0",
+    "respx>=0.21.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/uranfiz/python-libs/tg-notify-log"
+Source = "https://github.com/uranfiz/python-libs/tg-notify-log"
+Issues = "https://github.com/uranfiz/python-libs/tg-notify-log/issues"
+Telegram = "https://t.me/devuranium"
+Telegram-bot = "https://t.me/libsmods_bot"
+
+[tool.hatch.build.targets.wheel]
+packages = ["tg_notify_log"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/tg_notify_log",
+    "/tests",
+    "/README.md",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
