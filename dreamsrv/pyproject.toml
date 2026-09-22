@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dreamsrv"
+version = "0.1.1"
+description = "Server monitoring and control library for Python"
+readme = "README.md"
+license = "AGPL-3.0-only"
+requires-python = ">=3.9"
+dependencies = [
+    "psutil>=5.9.0",
+]
+authors = [
+    {name = "Dream"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
+    "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+Homepage = "https://github.com/uranfiz/python-libs/dreamsrv"
+Source = "https://github.com/uranfiz/python-libs/dreamsrv"
+Telegram = "https://t.me/devuranium"
